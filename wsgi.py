@@ -8,7 +8,7 @@ application = Flask(__name__)
 
 @application.route("/")
 def hello():
-    return "Hello World!"
+    return "/weekday/<int:i_year>/<int:i_month>/<int:i_day>"
 
 @application.route("/weekday/<int:i_year>/<int:i_month>/<int:i_day>")
 def weekday( i_year, i_month, i_day):
