@@ -10,6 +10,10 @@ application = Flask(__name__)
 def hello():
     return "/weekday/<int:i_year>/<int:i_month>/<int:i_day>"
 
+@application.route("/healthz")
+def healthz():
+    return "OK"
+
 @application.route("/weekday/<int:i_year>/<int:i_month>/<int:i_day>")
 def weekday( i_year, i_month, i_day):
     my_date = datetime.date(i_year, i_month, i_day)
